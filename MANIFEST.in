@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include warehouse_management *.css
+recursive-include warehouse_management *.csv
+recursive-include warehouse_management *.html
+recursive-include warehouse_management *.ico
+recursive-include warehouse_management *.js
+recursive-include warehouse_management *.json
+recursive-include warehouse_management *.md
+recursive-include warehouse_management *.png
+recursive-include warehouse_management *.py
+recursive-include warehouse_management *.svg
+recursive-include warehouse_management *.txt
+recursive-exclude warehouse_management *.pyc
