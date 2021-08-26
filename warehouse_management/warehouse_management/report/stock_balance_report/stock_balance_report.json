@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2021-08-25 10:56:54.839003",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-08-26 12:53:52.900690",
+ "modified_by": "Administrator",
+ "module": "Warehouse Management",
+ "name": "Stock Balance Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select Parent as Warehouse ,Item as `Item Name`,Qty as Quantity from `tabWarehouse Item`",
+ "ref_doctype": "Warehouse Item",
+ "report_name": "Stock Balance Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
