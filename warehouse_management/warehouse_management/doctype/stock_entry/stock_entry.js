@@ -6,6 +6,8 @@ frappe.ui.form.on('Stock Entry', {
 
 	// }
 	item: function(frm){
+	frm.set_value('available_quantity',0)
+	if(frm.doc.type=="Move"){
 		frappe.call({
 			method: 'warehouse_management.warehouse_management.doctype.stock_entry.stock_entry.get_quantity',
 			args: {
@@ -20,7 +22,8 @@ frappe.ui.form.on('Stock Entry', {
 				}
 			}
 		});
-		if(type=="Add" || type=="Remove"){
+	}
+		if(frm.doc.type=="Add" || frm.doc.type=="Remove"){
 			frappe.call({
 				method: 'warehouse_management.warehouse_management.doctype.stock_entry.stock_entry.get_quantity',
 				args: {

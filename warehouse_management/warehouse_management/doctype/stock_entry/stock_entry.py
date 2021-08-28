@@ -19,7 +19,6 @@ class StockEntry(Document):
         if self.type == 'Remove':
             warehouse_doc = frappe.get_doc('Warehouse', self.warehouse)
             item_exist = frappe.db.get_value('Warehouse Item', {'item': self.item, 'parent':self.warehouse})
-            print(item_exist)
             if item_exist:
                 qty = frappe.db.get_value('Warehouse Item', {'item': self.item, 'parent':self.warehouse}, 'qty')
                 current_quantity=qty - self.quantity
@@ -49,6 +48,9 @@ class StockEntry(Document):
 
 
 @frappe.whitelist()
+def get_quantity(from_warehouse,item):
+    quantity=	frappe.db.get_value('Warehouse Item',{'parent':from_warehouse, 'item':item},'qty')
+    return quantity
 def get_quantity(warehouse,item):
     quantity=	frappe.db.get_value('Warehouse Item',{'parent':warehouse, 'item':item},'qty')
     return quantity
