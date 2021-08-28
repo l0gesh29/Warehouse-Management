@@ -25,7 +25,7 @@ frappe.ui.form.on('Stock Entry', {
 	}
 		if(frm.doc.type=="Add" || frm.doc.type=="Remove"){
 			frappe.call({
-				method: 'warehouse_management.warehouse_management.doctype.stock_entry.stock_entry.get_quantity',
+				method: 'warehouse_management.warehouse_management.doctype.stock_entry.stock_entry.get_qty',
 				args: {
 					'warehouse':frm.doc.warehouse,
 					'item':frm.doc.item

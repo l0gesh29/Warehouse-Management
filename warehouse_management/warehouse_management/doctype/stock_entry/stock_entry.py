@@ -51,6 +51,8 @@ class StockEntry(Document):
 def get_quantity(from_warehouse,item):
     quantity=	frappe.db.get_value('Warehouse Item',{'parent':from_warehouse, 'item':item},'qty')
     return quantity
-def get_quantity(warehouse,item):
+
+@frappe.whitelist()
+def get_qty(warehouse,item):
     quantity=	frappe.db.get_value('Warehouse Item',{'parent':warehouse, 'item':item},'qty')
     return quantity
