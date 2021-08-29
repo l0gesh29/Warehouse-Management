@@ -5,6 +5,7 @@ frappe.ui.form.on('Stock Entry', {
 	// refresh: function(frm) {
 
 	// }
+	//code
 	item: function(frm){
 	frm.set_value('available_quantity',0)
 	if(frm.doc.type=="Move"){
