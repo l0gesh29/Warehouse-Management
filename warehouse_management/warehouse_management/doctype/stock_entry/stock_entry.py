@@ -53,6 +53,11 @@ def get_quantity(from_warehouse,item):
     return quantity
 
 @frappe.whitelist()
+def get_q(to_warehouse,item):
+    quantity=	frappe.db.get_value('Warehouse Item',{'parent':to_warehouse, 'item':item},'qty')
+    return quantity
+
+@frappe.whitelist()
 def get_qty(warehouse,item):
     quantity=	frappe.db.get_value('Warehouse Item',{'parent':warehouse, 'item':item},'qty')
     return quantity
